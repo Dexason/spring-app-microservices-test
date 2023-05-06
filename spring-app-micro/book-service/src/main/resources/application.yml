@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: book-service
+  cloud:
+    discovery:
+      enabled: true
+      service-id: config-server
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

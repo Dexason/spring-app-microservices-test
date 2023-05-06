@@ -1,0 +1,25 @@
+server:
+  port: 8888
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        native:
+          search-locations: C:\Users\namas\IdeaProjects\spring-app-micro\ms-config-properties\{application}\{profile}
+  application:
+    name: config-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
